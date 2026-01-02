@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Rights: Non-Consensual AI-Generated Images</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .alert-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 4px solid #f0ad4e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .alert-box h3 {
+            color: #856404;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .alert-box p {
+            color: #664d03;
+            font-size: 0.95rem;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .flag {
+            font-size: 1.5rem;
+        }
+        
+        .legal-theory {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .legal-theory h4 {
+            color: #2d3436;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legal-theory p {
+            font-size: 0.9rem;
+            color: #495057;
+            margin-bottom: 10px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-strong {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status-moderate {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-weak {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .action-steps {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .action-steps h4 {
+            color: #2e7d32;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        
+        .action-steps ol {
+            margin-left: 20px;
+        }
+        
+        .action-steps li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #1b5e20;
+        }
+        
+        .source-links {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #dee2e6;
+        }
+        
+        .source-links h5 {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 8px;
+        }
+        
+        .source-links a {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .source-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .key-case {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 20px 0;
+        }
+        
+        .key-case h4 {
+            color: #1565c0;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        
+        .key-case p {
+            font-size: 0.85rem;
+            color: #0d47a1;
+        }
+        
+        .defendants-box {
+            background: #fff;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 15px;
+        }
+        
+        .defendants-box h4 {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #495057;
+        }
+        
+        .defendant {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .defendant-icon {
+            font-size: 1.2rem;
+        }
+        
+        .defendant-info h5 {
+            font-size: 0.9rem;
+            color: #2d3436;
+        }
+        
+        .defendant-info p {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .commercial-chain {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .commercial-chain h3 {
+            color: #880e4f;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+        
+        .chain-flow {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+        }
+        
+        .chain-step {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            color: #ad1457;
+            font-weight: 500;
+        }
+        
+        .chain-arrow {
+            color: #c2185b;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+        
+        footer a {
+            color: #007bff;
+        }
+        
+        .disclaimer {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        
+        .disclaimer h4 {
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 25px 20px;
+            }
+            
+            header h1 {
+                font-size: 1.4rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .chain-flow {
+                flex-direction: column;
+            }
+            
+            .chain-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Your Rights: Non-Consensual AI-Generated Images</h1>
+            <p>Legal options when AI tools like Grok generate images of you without consent—even non-nude images like bikini photos</p>
+        </header>
+        
+        <div class="alert-box">
+            <h3>⚠️ Important Context</h3>
+            <p>Most deepfake laws focus on <strong>nude or sexually explicit</strong> content. However, when AI-generated images appear on <strong>commercial platforms that profit from advertising</strong>, additional legal protections apply—even for non-nude images like bikini photos.</p>
+        </div>
+        
+        <div class="commercial-chain">
+            <h3>💰 Why Commercial Platforms Change Everything</h3>
+            <p style="font-size: 0.9rem; color: #880e4f; margin-bottom: 12px;">When this chain exists, stronger legal claims become available:</p>
+            <div class="chain-flow">
+                <span class="chain-step">Your Face</span>
+                <span class="chain-arrow">→</span>
+                <span class="chain-step">AI Generates Image</span>
+                <span class="chain-arrow">→</span>
+                <span class="chain-step">Posted to Platform</span>
+                <span class="chain-arrow">→</span>
+                <span class="chain-step">Engagement</span>
+                <span class="chain-arrow">→</span>
+                <span class="chain-step">Ads Served</span>
+                <span class="chain-arrow">→</span>
+                <span class="chain-step">Platform Profits</span>
+            </div>
+        </div>
+
+        <!-- UNITED STATES -->
+        <div class="section">
+            <h2><span class="flag">🇺🇸</span> United States</h2>
+            
+            <div class="legal-theory">
+                <h4>📜 Right of Publicity <span class="status-badge status-strong">Strong Claim</span></h4>
+                <p>Protects your right to control commercial use of your likeness. ~35 states recognize this right. <strong>You don't need to be a celebrity</strong>—courts have ruled ordinary people have commercial value in their likeness when platforms profit from it.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://www.law.cornell.edu/wex/publicity" target="_blank">Cornell LII: Right of Publicity</a>
+                    <a href="https://epic.org/documents/fraley-v-facebook/" target="_blank">Fraley v. Facebook (Key Precedent)</a>
+                    <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=3344.&lawCode=CIV" target="_blank">California Civil Code § 3344</a>
+                </div>
+            </div>
+            
+            <div class="key-case">
+                <h4>⚖️ Key Precedent: Fraley v. Facebook (2011)</h4>
+                <p>Court ruled that <strong>non-celebrities have commercially valuable likenesses</strong> when platforms use them to generate ad revenue. Facebook couldn't claim Section 230 immunity because it <em>created</em> the sponsored content rather than just hosting it. This precedent applies directly to AI-generated images.</p>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>🔒 Section 230 Does NOT Protect AI Generators <span class="status-badge status-strong">Favorable</span></h4>
+                <p>Section 230 protects platforms from liability for <em>user-generated</em> content. But AI tools that <em>create</em> content are "information content providers"—they don't get immunity. Legal consensus: AI generators like Grok are creators, not hosts.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://cdt.org/insights/section-230-and-its-applicability-to-generative-ai-a-legal-analysis/" target="_blank">CDT: Section 230 & Generative AI</a>
+                    <a href="https://www.congress.gov/crs-product/LSB11097" target="_blank">Congressional Research Service Analysis</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>💡 False Light <span class="status-badge status-moderate">Moderate Claim</span></h4>
+                <p>If the AI-generated image places you in a misleading, offensive context (implying you posed for or consented to such an image), you may have a false light privacy claim. Requires wide publication and content a reasonable person would find highly offensive.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://www.dmlp.org/legal-guide/false-light" target="_blank">Digital Media Law Project: False Light</a>
+                    <a href="https://www.findlaw.com/injury/torts-and-personal-injuries/invasion-of-privacy-false-light.html" target="_blank">FindLaw: False Light Invasion of Privacy</a>
+                </div>
+            </div>
+            
+            <div class="defendants-box">
+                <h4>Who Can You Sue?</h4>
+                <div class="defendant">
+                    <span class="defendant-icon">🤖</span>
+                    <div class="defendant-info">
+                        <h5>The AI Company (e.g., xAI/Grok)</h5>
+                        <p>Created the content; likely no Section 230 protection; commercial benefit from tool usage</p>
+                    </div>
+                </div>
+                <div class="defendant">
+                    <span class="defendant-icon">📱</span>
+                    <div class="defendant-info">
+                        <h5>The Platform (e.g., X/Twitter)</h5>
+                        <p>Profits from ad revenue; integrated AI tool; may share liability for tool they offer</p>
+                    </div>
+                </div>
+                <div class="defendant">
+                    <span class="defendant-icon">👤</span>
+                    <div class="defendant-info">
+                        <h5>The User Who Created/Posted It</h5>
+                        <p>Initiated the creation; published without consent; may face state harassment laws if part of pattern</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-steps">
+                <h4>✅ Steps to Take</h4>
+                <ol>
+                    <li><strong>Document everything</strong>—screenshot the image, URL, username, date/time</li>
+                    <li><strong>File a takedown request</strong> with the platform citing your right of publicity</li>
+                    <li><strong>Consult an attorney</strong> specializing in privacy/publicity rights in your state</li>
+                    <li><strong>Consider filing in California</strong> if possible (strongest publicity rights law)</li>
+                    <li><strong>Report to state AG</strong> if the user is identifiable and pattern of harassment exists</li>
+                </ol>
+            </div>
+            
+            <div class="source-links">
+                <h5>📎 Federal Laws & Resources:</h5>
+                <a href="https://www.congress.gov/bill/119th-congress/senate-bill/146" target="_blank">TAKE IT DOWN Act (S.146)</a>
+                <a href="https://www.congress.gov/bill/119th-congress/house-bill/3562" target="_blank">DEFIANCE Act (Pending)</a>
+                <a href="https://www.citizen.org/article/tracker-intimate-deepfakes-state-legislation/" target="_blank">State Deepfake Law Tracker</a>
+            </div>
+        </div>
+
+        <!-- CANADA -->
+        <div class="section">
+            <h2><span class="flag">🇨🇦</span> Canada</h2>
+            
+            <div class="legal-theory">
+                <h4>🏛️ Provincial Privacy Torts <span class="status-badge status-moderate">Moderate Claim</span></h4>
+                <p>BC and Manitoba have the strongest protections. Their Privacy Acts prohibit unauthorized use of your likeness for commercial purposes or "any purposes of gain"—which includes platforms profiting from ad revenue.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/00_96373_01" target="_blank">BC Privacy Act</a>
+                    <a href="https://web2.gov.mb.ca/laws/statutes/ccsm/p125e.php" target="_blank">Manitoba Privacy Act</a>
+                    <a href="https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/23011" target="_blank">BC Intimate Images Protection Act (2024)</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>👤 Appropriation of Personality <span class="status-badge status-moderate">Moderate Claim</span></h4>
+                <p>Common law tort recognized in several provinces. Requires showing your persona was appropriated for economic gain. The commercial chain (platform profits from ads) satisfies this element.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://mcmillan.ca/insights/what-can-the-law-do-about-deepfake/" target="_blank">McMillan LLP: Deepfake Legal Analysis</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>⚠️ Criminal Code Gaps <span class="status-badge status-weak">Limited</span></h4>
+                <p>Section 162.1 (intimate images) has been interpreted by courts as NOT covering AI-generated images of adults. Section 163.1 (child pornography) DOES cover AI-generated images of minors. Federal law reform is expected but not yet enacted.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://laws-lois.justice.gc.ca/eng/acts/c-46/section-162.1.html" target="_blank">Criminal Code § 162.1</a>
+                    <a href="https://laws-lois.justice.gc.ca/eng/acts/c-46/section-163.1.html" target="_blank">Criminal Code § 163.1</a>
+                </div>
+            </div>
+            
+            <div class="action-steps">
+                <h4>✅ Steps to Take</h4>
+                <ol>
+                    <li><strong>Document everything</strong>—screenshot with timestamps and URLs</li>
+                    <li><strong>File takedown request</strong> with the platform</li>
+                    <li><strong>If in BC:</strong> Apply to the Civil Resolution Tribunal under the Intimate Images Protection Act</li>
+                    <li><strong>Consult a privacy lawyer</strong> in your province</li>
+                    <li><strong>File complaint with provincial Privacy Commissioner</strong> if commercial entity involved</li>
+                    <li><strong>Consider filing in BC</strong> if you have any connection (broadest protections)</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- EUROPEAN UNION -->
+        <div class="section">
+            <h2><span class="flag">🇪🇺</span> European Union</h2>
+            
+            <div class="legal-theory">
+                <h4>🔐 GDPR Rights <span class="status-badge status-strong">Strong Claim</span></h4>
+                <p>Your face is personal data. AI processing your likeness without consent violates GDPR. You have rights to erasure (Article 17), objection (Article 21), and compensation for damages (Article 82). The "household exemption" does NOT apply to commercial AI services or platforms.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://gdpr-info.eu/art-17-gdpr/" target="_blank">GDPR Article 17: Right to Erasure</a>
+                    <a href="https://gdpr-info.eu/art-82-gdpr/" target="_blank">GDPR Article 82: Right to Compensation</a>
+                    <a href="https://www.privacycompany.eu/blog/deepfakes-and-the-gdpr" target="_blank">Deepfakes and the GDPR</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>🤖 EU AI Act <span class="status-badge status-strong">Strong Claim</span></h4>
+                <p>Requires disclosure that content is AI-generated. Deepfakes must be labeled. Penalties up to €35 million or 7% of global turnover. Full enforcement from August 2026, but transparency provisions already apply.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://artificialintelligenceact.eu/article/50/" target="_blank">EU AI Act Article 50: Transparency</a>
+                    <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank">EU AI Act Overview</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>🖼️ Right to Your Image (National Laws) <span class="status-badge status-strong">Strong Claim</span></h4>
+                <p>Most EU countries recognize a fundamental right to control use of your image. This applies to ANY image, not just intimate ones. Germany (KUG), France (Civil Code Art. 9), and Italy have particularly strong protections.</p>
+                <div class="source-links">
+                    <h5>📎 Key Sources:</h5>
+                    <a href="https://www.jacobacci-law.com/news-and-publications/ai-and-deepfakes-eu-and-italian-regulations" target="_blank">Italian Regulations on Deepfakes</a>
+                    <a href="https://www.gesetze-im-internet.de/kunsturhg/" target="_blank">German KUG (Art Copyright Act)</a>
+                </div>
+            </div>
+            
+            <div class="action-steps">
+                <h4>✅ Steps to Take</h4>
+                <ol>
+                    <li><strong>Send Article 17 erasure request</strong> directly to the AI service and platform</li>
+                    <li><strong>File complaint with your Data Protection Authority</strong> (DPA)—this is free</li>
+                    <li><strong>Report AI Act violation</strong> to national AI authority (labeling/disclosure violations)</li>
+                    <li><strong>Seek compensation</strong> under GDPR Article 82 through civil courts</li>
+                    <li><strong>File national image rights claim</strong> in civil court for damages</li>
+                </ol>
+            </div>
+            
+            <div class="source-links">
+                <h5>📎 Find Your Data Protection Authority:</h5>
+                <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en" target="_blank">List of EU Data Protection Authorities</a>
+            </div>
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="section">
+            <h2>📚 Additional Resources</h2>
+            
+            <div class="legal-theory">
+                <h4>🔍 Research & Trackers</h4>
+                <div class="source-links" style="border: none; padding: 0; margin: 0;">
+                    <a href="https://www.citizen.org/article/tracker-intimate-deepfakes-state-legislation/" target="_blank">Public Citizen: State Deepfake Law Tracker</a>
+                    <a href="https://www.ncsl.org/technology-and-communication/deceptive-audio-or-visual-media-deepfakes-2024-legislation" target="_blank">NCSL: Deepfake Legislation Overview</a>
+                    <a href="https://www.compliancehub.wiki/complete-guide-to-u-s-deepfake-laws-2025-state-and-federal-compliance-landscape/" target="_blank">ComplianceHub: Complete US Deepfake Laws Guide</a>
+                    <a href="https://rainn.org/rainns-recommendations-for-legislators/image-based-sexual-abuse-laws-combat-nonconsensual-ai-deepfakes/" target="_blank">RAINN: Image-Based Sexual Abuse Laws</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>⚖️ Key Legal Analysis</h4>
+                <div class="source-links" style="border: none; padding: 0; margin: 0;">
+                    <a href="https://legal-forum.uchicago.edu/print-archive/dont-believe-your-eyes-fighting-deepfaked-nonconsensual-pornography-tort-law" target="_blank">U Chicago: Fighting Deepfakes with Tort Law</a>
+                    <a href="https://harvardlawreview.org/print/vol-138/beyond-section-230-principles-for-ai-governance/" target="_blank">Harvard Law Review: Beyond Section 230</a>
+                    <a href="https://businesslawreview.uchicago.edu/print-archive/generative-ai-meets-section-230-future-liability-and-its-implications-startup" target="_blank">U Chicago: Generative AI & Section 230</a>
+                </div>
+            </div>
+            
+            <div class="legal-theory">
+                <h4>📞 Support Organizations</h4>
+                <div class="source-links" style="border: none; padding: 0; margin: 0;">
+                    <a href="https://www.cybercivilrights.org/" target="_blank">Cyber Civil Rights Initiative</a>
+                    <a href="https://www.stopncii.org/" target="_blank">StopNCII (Image Removal Tool)</a>
+                    <a href="https://withoutmyconsent.org/" target="_blank">Without My Consent</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <h4>⚠️ Disclaimer</h4>
+            <p>This guide provides general legal information, not legal advice. Laws vary by jurisdiction and change frequently. The legal landscape for AI-generated content is evolving rapidly. Always consult with a qualified attorney in your jurisdiction for advice specific to your situation. Information current as of January 2026.</p>
+        </div>
+        
+        <footer>
+            <p>Last updated: January 2026</p>
+            <p>This resource is provided for educational purposes. Share freely.</p>
+        </footer>
+    </div>
+</body>
+</html>
